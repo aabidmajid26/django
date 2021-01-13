@@ -43,3 +43,6 @@ def add(request):
     {
         "form":NewEntryForm()
     })
+
+def showPerson(request):
+    pass
