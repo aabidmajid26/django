@@ -1,7 +1,23 @@
 
 {% extends "home/layout.html" %}
 
+{% load static %}
+{% block link %}
+
+    <link rel="stylesheet" href="{% static 'home/formStyle.css' %}">
+
+{% endblock %}
+
 {% block content %}
-    {{form}}
-    <input type="submit">
+    
+    <div>
+        <form action="{% url 'add' %}" method="POST" class="mb-3">
+            {% csrf_token %}
+            {{form}}
+            <div><input type="submit"></div>
+        </form>
+    </div>
+    <div>
+        <a href="{% url 'people' %}">Show People</a>
+    </div>
 {% endblock %}

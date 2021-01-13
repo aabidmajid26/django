@@ -1,11 +1,24 @@
 {% extends "home/layout.html" %}
+{%load static %}
+
+{% block link %}
+    
+{%endblock%}
+
+
 
 {% block content %}
-    <ul>
-    {% for person in people %}
-        <li>{{person}}</li>
-    {% empty %}
-        <li>No one here!</li>
-    {% endfor %}
-    </ul>
+    
+    <div>
+        <ul>
+            {% for person in people %}
+                <li>{{person}}</li>
+            {% empty %}
+                <li>No one here!</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <a href="{% url 'add' %}">Add New Entry</a>
+    </div>
 {% endblock %}

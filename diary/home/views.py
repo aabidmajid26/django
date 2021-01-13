@@ -2,12 +2,13 @@ from django import forms
 from django.shortcuts import render,HttpResponse
 
 # Create your views here.
-people = ['Hello', 'World', 'Karma', 'Jarma']   #people
+people = []   #people
 accounts = [] #2d list.
 
 #FORM for template.
 
-class regField(forms.Form):
+class NewEntryForm(forms.Form):
+
     name = forms.CharField(label = "Name",max_length=40)
     debit = forms.IntegerField(label = "Taken")
     credit = forms.IntegerField(label="Given")
@@ -23,6 +24,13 @@ def showAll(request):
         "people":people
     })
 def add(request):
-    return render(request, "home/add.html",{
-        "form":regField()
+    if request.method == 'POST':
+        form = NewEntryForm(request.POST)
+        if form.is_valid():
+            person = form.cleaned_data['name']
+            people.append(person)
+
+    return render(request, "home/add.html",
+    {
+        "form":NewEntryForm()
     })

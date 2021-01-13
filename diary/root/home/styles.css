@@ -1,0 +1,27 @@
+body{
+    background-color: orange;
+}
+
+h1{
+    font-size: 50px;
+}
+
+a{
+    margin-left: 30px;
+    margin-top: 30px;
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: cornflowerblue;
+}
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+div{
+    margin-top: 30px;
+}
