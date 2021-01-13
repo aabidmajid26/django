@@ -3,7 +3,7 @@ from django.shortcuts import render,HttpResponse
 
 # Create your views here.
 people = []   #people
-accounts = [] #2d list.
+accounts = dict()
 
 #FORM for template.
 
@@ -28,7 +28,16 @@ def add(request):
         form = NewEntryForm(request.POST)
         if form.is_valid():
             person = form.cleaned_data['name']
+            s = [form.cleaned_data['debit'],form.cleaned_data['credit'],form.cleaned_data['date']]
             people.append(person)
+            try:
+                accounts[person].append(s)
+            except Exception:
+                accounts[person] = [s]
+        else:
+            return render(request,"home/add.html", {
+                "form":form
+            })
 
     return render(request, "home/add.html",
     {
