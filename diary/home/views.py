@@ -1,6 +1,8 @@
 from django import forms
 from django.shortcuts import render,HttpResponse
 from django.urls import reverse
+from django.contrib.admin import widgets
+import datetime
 
 # Create your views here.
 people = dict()   #people
@@ -11,9 +13,12 @@ accounts = dict()
 class NewEntryForm(forms.Form):
 
     name = forms.CharField(label = "Name",max_length=40)
-    debit = forms.IntegerField(label = "Taken")
-    credit = forms.IntegerField(label="Given")
-    date = forms.DateField(label="On")
+    debit = forms.IntegerField(label = "Taken", initial=0,min_value=0)
+    credit = forms.IntegerField(label="Given",initial=0,min_value=0)
+    date = forms.DateField(
+        label="On   ", 
+        initial=datetime.date.today,
+        widget=forms.widgets.DateInput(attrs={'type':'date'}))
 
 
 
