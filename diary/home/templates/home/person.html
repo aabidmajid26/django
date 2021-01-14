@@ -1,0 +1,16 @@
+{% extends "home/layout.html" %}
+{% block content %}
+    {% if not exists %}
+        <h1>No record exists for {{name}}</h1>
+    {% else %}
+        <h1>{{name}}</h1>
+        <ul>
+            {% for rec in record %}
+                <li>{{rec}}</li>
+            {% endfor %}
+        </ul>    
+
+    {% endif %}
+
+
+{% endblock %}
