@@ -12,10 +12,11 @@
     <div>
         <ul>
             {% for person in people %}
-                <li>{{person}}</li>
+                <li><a href="{{person}}/">{{person}}</a></li>
             {% empty %}
                 <li>No one here!</li>
             {% endfor %}
+            
         </ul>
     </div>
     <div>

@@ -1,8 +1,9 @@
 from django import forms
 from django.shortcuts import render,HttpResponse
+from django.urls import reverse
 
 # Create your views here.
-people = []   #people
+people = dict()   #people
 accounts = dict()
 
 #FORM for template.
@@ -29,11 +30,15 @@ def add(request):
         if form.is_valid():
             person = form.cleaned_data['name']
             s = [form.cleaned_data['debit'],form.cleaned_data['credit'],form.cleaned_data['date']]
-            people.append(person)
+            people[person]=1
             try:
                 accounts[person].append(s)
+                print(s,'appended to', person)
+                print(accounts)
             except Exception:
                 accounts[person] = [s]
+                print(s,'added to ', person)
+                print(accounts)
         else:
             return render(request,"home/add.html", {
                 "form":form
@@ -44,5 +49,15 @@ def add(request):
         "form":NewEntryForm()
     })
 
-def showPerson(request):
-    pass
+def showPerson(request,name):
+    try:
+        return render(request, "home/person.html",{
+            "record":accounts[name],
+            "exists":True,
+            "name":name
+        })
+    except KeyError:
+        return render(request, "home/person.html",{
+            "name":name,
+            "exists":False
+        })
