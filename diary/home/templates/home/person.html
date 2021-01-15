@@ -4,11 +4,11 @@
         <h1>No record exists for {{name}}</h1>
     {% else %}
         <h1>{{name}}</h1>
-        <ul>
-            {% for rec in record %}
-                <li>{{rec}}</li>
+        <ol>
+            {% for transaction in transactions %}
+                <li><h5>{{transaction}}</h5></li>
             {% endfor %}
-        </ul>    
+        </ol>    
 
     {% endif %}
 
