@@ -1,5 +1,9 @@
-body{
-    background-color: orange;
+/* body{
+    background-color:orangered;
+} */
+
+#header{
+    background-color: rgb(17, 47, 102);
 }
 
 h1{
@@ -8,20 +12,17 @@ h1{
 
 a{
     margin-left: 30px;
-    margin-top: 30px;
-    color: black;
+    margin-top: 15px;
+    color: red;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 20px;
     text-decoration: none;
 }
 a:hover{
     text-decoration: underline;
-    color: cornflowerblue;
+    color: rgb(17, 47, 102);
 }
 a:visited{
     color: black;
     text-decoration: none;
-}
-div{
-    margin-top: 30px;
 }

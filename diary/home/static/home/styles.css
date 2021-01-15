@@ -1,6 +1,22 @@
 body{
-    background-color: orange;
+    background-color:rgb(175, 162, 157);
 }
+
+#header{
+    background-color: rgb(16, 25, 43);
+    height: 100px;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    /* position: absolute; */
+    padding: 7px;
+    color: rgb(175, 162, 157);
+    text-align: center;
+    border-radius: 10px;
+}
+/* #nav-bar{
+    background-color: rgb(16, 25, 43);
+} */
 
 h1{
     font-size: 50px;
@@ -8,17 +24,86 @@ h1{
 
 a{
     margin-left: 30px;
-    margin-top: 30px;
-    color: black;
+    margin-top: 15px;
+    color: rgb(175, 162, 157);
     font-weight: bold;
-    font-size: 35px;
+    font-size: 20px;
     text-decoration: none;
 }
 a:hover{
-    text-decoration: underline;
-    color: cornflowerblue;
+    /* text-decoration: underline; */
+    color: rgb(16, 25, 43);
+    font-size: large;
 }
 a:visited{
     color: black;
     text-decoration: none;
+}
+
+.grid {
+    display: grid;
+    padding: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-columns: 200px auto;
+    color: rgb(175, 162, 157);
+    margin-bottom: 10px;
+}
+
+.grid-item {
+    background-color:rgb(16, 25, 43);
+    font-size: 20px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 20px;
+}
+.grid2 {
+    display: grid;
+    padding: 0.5px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-columns: 200px auto;
+    color: rgb(175, 162, 157);
+    margin-bottom: 2px;
+}
+
+.grid-item2 {
+    background-color:rgb(16, 25, 43);
+    font-size: 20px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 20px;
+}
+#esidebar{
+    background-color:  rgb(163, 125, 110);
+
+}
+#hyperlink2{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+}
+#hyperlink2:hover{
+    color: rgb(200,220,150);
+}
+form{
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+#person-name{
+    color: silver;
+}
+
+label{
+    width: 100px;
+    display: inline-block;
+}
+
+button{
+    width: 70px;
+    height: 25px;
+    font-weight: bold;
+    position: relative;
+    left: 103px;
+    margin-top: 3px;
 }

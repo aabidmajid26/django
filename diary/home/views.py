@@ -51,7 +51,7 @@ def add(request):
                 p_id = len(People.objects.all())+1
                 person = People(p_id, fname,lname,rdence)
                 person.save()
-            new_transaction = Transactions(id=trans_id,person_id=p_id, debit=dbt,credit=crdt)
+            new_transaction = Transactions(id=trans_id,person_id=person, debit=dbt,credit=crdt)
             new_transaction.save()
             return HttpResponseRedirect(redirect_to=reverse('people'))
         else:

@@ -4,20 +4,38 @@
     <head>
         <title>Diary - Home</title>
         <link rel="stylesheet" href="{% static 'home/styles.css' %}" >
+
         {% block link %}
         {% endblock%}
+        
     </head>
 
     <body>
-        <span>
-            <h1>Accounts</h1>
+        <div id="header">
+            <p>Accounts</p>
+        </div>
+        <div id="nav-bar" class="grid2">
+            
+            <span class="grid-item2"><a href="{% url 'home' %}" id="hyperlink2">Home</a></span>
+            <span class="grid-item2">
+                <a href="{% url 'people' %}" id="hyperlink2">Show People</a>
+            <a href="{% url 'add' %}" id="hyperlink2">Add New Entry</a>
+            </span>
+        </div>
+        <div class="grid">
+            
+            <div class="grid-item" id="esidebar">
+            
+            </div>
+            <div class="grid-item">
+                {% block content %}
+                {% endblock %}
+            </div>
             <hr>
-        </span>
+            
+        </div>
+        
 
-        {% block content %}
-        {% endblock %}
-
-
+        
     </body>
-
 </html>

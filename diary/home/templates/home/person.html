@@ -1,16 +1,15 @@
 {% extends "home/layout.html" %}
+{% load static %}
 {% block content %}
     {% if not exists %}
         <h1>No record exists for {{name}}</h1>
     {% else %}
-        <h1>{{name}}</h1>
+        <h1 id="person-name">{{name}}</h1>
         <ol>
             {% for transaction in transactions %}
-                <li><h5>{{transaction}}</h5></li>
+                <li><h4>{{transaction}}</h4></li>
             {% endfor %}
         </ol>    
-
     {% endif %}
-
 
 {% endblock %}
